@@ -7,10 +7,10 @@
  * Grade: 2nd
  * Practice 6 - Deterministic Finite Automaton
  * Email: alu0101049151@ull.edu.es
- * Transition.h file: Transition.h class. It represents a transition between the
- *                    current state and another state of the automaton. The 
- *                    destination depends on the entry that reaches the current 
- *                    state. This file contains the class implementation.
+ * Transition.cpp file: Transition class. It represents a transition between the
+ *                      current state and another state of the automaton. The 
+ *                      destination depends on the entry that reaches the current 
+ *                      state. This file contains the class implementation.
  * References:
  *                Practice statement:
  *                https://campusvirtual.ull.es/1920/pluginfile.php/176735/mod_assign/introattachment/0/CYA_1920_Practica_6.pdf?forcedownload=1
@@ -43,7 +43,7 @@ int Transition::getDestination() const {
 }
 
 
-int operator< (const Transition& transition) const {
+int Transition::operator< (const Transition& transition) const {
 	if (this->input_ < transition.input_) return 1;
 	if (this->input_ == transition.input_ && this->destination_ < transition.destination_) return 1;
 	return 0;
