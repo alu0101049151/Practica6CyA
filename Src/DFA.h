@@ -21,6 +21,7 @@
 #define PRACTICE6_DFA_H
 
 #include <vector>
+#include <sstream>
 
 #include "Alphabet.h"
 #include "State.h"
@@ -31,21 +32,23 @@ const std::string ENDOFCOMMENTS="////";
 
 
 class DFA {
-	prublic:
+	public:
     DFA(std::string& inputFile);
     ~DFA();
 
-	protectedi: 
+    void setStartState(std::string& startState);
+
+	protected: 
     /**
     * @brief read the input file and builds the DFA
     * @param inputFile is the name of the input file.
     */
-    void read&buildDFA(std::string& dfaDefinition);
+    void readAndBuildDFA(std::string& dfaDefinition);
 
 	private:
-		std::string startSate_;              //!< Is the boot state.
+		std::string startState_;              //!< Is the boot state.
 		std::set<State> states_;             //!< Set with all the states of the DFA.
-		std::set<State> finalStates_;        //!< Set of final states.
+		std::set<std::string> finalStates_;  //!< Set of id's of the final states.
 		Alphabet alphabet_;                  //!< Alphabet of the DFA.
     std::vector<std::string> comments_;  //!< Stores all the comments at the
                                          //!< beginning of the file.

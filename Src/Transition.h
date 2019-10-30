@@ -21,21 +21,23 @@
 #ifndef PRACTICE6_TRANSITION_H
 #define PRACTICE6_TRANSITION_H
 
+#include <string>
+
 class Transition {
 
 	public:
-		Transition(char input, int destination);
+		Transition(char input, std::string destination);
 		Transition(const Transition& transition);
 		~Transition();
 
 		char getInput() const;
-		int getDestination() const;
+		std::string getDestination() const;
 
 		int operator< (const Transition& transition) const;
 
 	private:
-		char input_;          //!< Input symbol that determines the state to which transit the current state
-		int  destination_;    //!< Id of the destination state to which it transits with "input_"
+		char input_;                //!< Input symbol that determines the state to which transit the current state
+		std::string  destination_;  //!< Id of the destination state to which it transits with "input_"
 };
 
 #endif //PRACTICE6_TRANSITION_H

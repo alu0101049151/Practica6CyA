@@ -20,7 +20,7 @@
 
 #include "Transition.h"
 
-Transition::Transition(char input, int destination):
+Transition::Transition(char input, std::string destination):
 	input_(input),
 	destination_(destination) {}
 
@@ -38,7 +38,7 @@ char Transition::getInput() const {
 }
 
 
-int Transition::getDestination() const {
+std::string Transition::getDestination() const {
 	return destination_;
 }
 
